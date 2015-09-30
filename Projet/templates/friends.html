@@ -1,0 +1,14 @@
+<div>
+    <label> search</label>
+    <input type="text" ng-model="searchText">
+    <table id="searchresult"> 
+    <tr>
+      <th> name</th> <th>phone</th>
+    </tr>
+    <tr ng-repeat ="friend in friends | fitrer:searchText ">
+    <td>{{friend.name}}</td>
+    <td>{{friend.phone}}</td>
+    </tr>
+
+    </table>
+</div>

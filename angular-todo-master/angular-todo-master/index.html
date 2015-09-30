@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJs Course - IKNSA</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/todo.css">
+  </head>
+  <body>
+    <!-- Page Content -->
+
+    <!-- Avec la directive ng-app nous informons angular que ceci est une application
+    angular et que le nom de cette application est todoApp -->
+    <div class="row-fluid" ng-app="todoApp">
+      <div class="jumbotron col-xs-8 col-xs-offset-2">
+        <h2>Todo</h2>
+
+        <!-- Le controller est une partie logique de notre code. -->
+        <div class="container-fluid" ng-controller="TodoListController">
+            <!-- Ici on exécute la fonction remaining qui nous retourne le nombre de todo restant.
+            Ensuite comme la liste des todos est disponible ici on fait juste un .length pour
+            savoir combien il y en a au total -->
+            <span>{{ remaining() }} of {{ todos.length }} remaining</span>
+            <!-- On utilise le ng-click pour appeler la fonction archive -->
+            <a class="btn btn-danger" href="" ng-click="archive()">archive</a>
+
+            <hr>
+            <ul class="list-group">
+
+                <!-- Avec la directive ng-repeat, angular va dupliquer le marqage HTML
+                autant de fois qu'il y a de todo dans notre tableau todos défini dans
+                notre controller -->
+                <li class="list-group-item" ng-repeat="todo in todos">
+                    <!-- Avec la directive ng-model, nous faisons du two way data-binding.
+                    Quand a valeur du checkbox passe a true (étant donné que les checkbox
+                    retourne un booléen), le ng-model passe a true et nous
+                    récupérons cette valeur dans notre controller et vice versa -->
+                    <input type="checkbox" ng-model="todo.done">
+                    <!-- Ici nous affichons le text du todo mais avant nous prenons avantage
+                    du two way data-binding en modifiant la classe à done-true ou done-false -->
+                    <span class="done-{{ todo.done }}">{{ todo.text }}</span>
+                </li>
+            </ul>
+
+            <form>
+                <!-- Ici nous rajoutons la directive ng-model pour avoir le two way data-binding
+                sur le contenu du champ -->
+                <input type="text" placeholder="Add new todo here" ng-model="formNewTodo">
+
+                <!-- Ici on utilise la directive ng-click pour exécuter la fonction addTodo -->
+                <button class="btn btn-primary" ng-click="addTodo()" type="submit">Add</button>
+            </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Page Content -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/todo.js"></script>
+  </body>
+</html>

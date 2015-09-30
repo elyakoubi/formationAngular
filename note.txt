@@ -1,0 +1,22 @@
+DOM:structure de lq page.
+
+ember 
+react(facebook)
+angular(google)
+angularjs: 
+-le controlleur n'a pas de connaissance de view 
+-une fois on declare le scop on a acces a tous ce qui est a l'interieur de ng-app
+- git config --global https.proxy http://fr-proxy.groupinfra.com:3128
+-git config --global http.proxy http://fr-proxy.groupinfra.com:3128
+-git clone
+-git checkout 0.0.0 
+-can i use 
+directives: vue 
+-from stupide to solide.
+-http://ngmodules.org/modules/angular-ui
+-npmjs.com
+-firebase
+-yeoman.
+-SASS/SCSS
+-bower gestionnaire de package de dépondence 
+-yallow lab tools : analyse la performance.
